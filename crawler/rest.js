@@ -23,10 +23,12 @@ function handle(coin, asks, bids, currency) {
     let b = bids.sort(cmp_bid);
 
     let symbol = (coin + currency).toLowerCase();
+    // console.log(symbol);
     orderbook[symbol] = {
         asks: a,
         bids: b
     };
+    // console.log(orderbook);
     // console.log(orderbook[symbol]);
     // TODO 根据数据生成你想要的K线 or whatever...
     // TODO 记录数据到你的数据库或者Redis
@@ -35,6 +37,7 @@ function handle(coin, asks, bids, currency) {
 function get_depth(coin, currency) {
     return new Promise(resolve => {
         let url = `${BASE_URL}/market/depth?symbol=${coin}${currency}&type=step0`;
+        console.log(url);
         http.get(url, {
             timeout: 1000,
             gzip: true
@@ -61,7 +64,7 @@ function run() {
     // let list_eth = ['omg-eth', 'eos-eth', 'qtum-eth'];
     // let list = list_btc.concat(list_usdt).concat(list_eth);
     console.log('rest run');
-    let list = ['xrp-btc'];
+    let list = ['eth-usdt'];
     Promise.map(list, item => {
         let coin = item.split('-')[0];
         let currency = item.split('-')[1];

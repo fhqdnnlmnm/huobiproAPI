@@ -1,10 +1,13 @@
 {
     "huobi": {
-        "access_key": "replace_me",
-        "secretkey": "replace_me",
-        "uid": "replace_me",
+        "access_key": "ee364b52-f9585005-5ef91972-dec03",
+        "secretkey": "59bdf59e-30082895-a5578a08-156a2",
+        "uid": "49855581",
         "account_id_pro": "replace_me",
         "trade_password": "replace_me",
-        "privatekey": "replace_me"
+        "privatekey": "replace_me",
+        "mongodb":{
+            "db":"huobi"
+        }
     }
 }
