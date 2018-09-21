@@ -19,3 +19,10 @@
 //         console.log("文档插入成功");
 //         db.close();
 // });
+var Vehicle=function(){
+    
+    this.price=1000;
+};
+var v=Vehicle();
+console.log(v);
+console.log(price);
